@@ -160,3 +160,56 @@ function splitWords(strr){
 
 const strr= "The quick brown fox"
 console.log(splitWords(strr))
+
+
+/**-------------------------------------------------------------------------------- */
+// B. Part 2: Essay Questions (2.5 Grade): 
+
+//1. What is the difference between forEach and for...of? When would you use each?
+
+
+// 2. What is hoisting and what is the Temporal Dead Zone (TDZ)? Explain with examples.
+
+/**
+ * hosting=> moving declarations to the top of their scope before code execution.
+ *  However, only declarations are hoisted,
+ */
+
+console.log(x);
+
+var x= 10;
+
+/**
+ * temprory dead zone =>the period between entering a block scope and 
+ * the point where a let or const variable is declared.
+ *  Accessing the variable during this time causes a ReferenceError
+ */
+
+console.log(a); // ReferenceError
+let a = 5;
+
+
+// 3. What are the main differences between == and ===? (0.5 Grade)
+
+
+
+// 4. Explain how try-catch works and why it is important in async operations.
+
+/**
+ * The try...catch statement is used to handle errors
+ *  in JavaScript without stopping the entire program.
+ */
+async function fetchData() {
+  try {
+    const response = await fetch("https://api.example.com/data");
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log("Failed to fetch data:", error.message);
+  }
+}
+
+fetchData();
+
+
+// 5. What’s the difference between type conversion and coercion? Provide examples of each.
