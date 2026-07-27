@@ -11,10 +11,14 @@ console.log(result)
 // • Input Example: 0
 // • Output Example: "Invalid"
 
-// const value= 0;
-// if(value=== false ){
-//     console.log("invalid")
-// }
+function checkFalsy(value){
+    if(!value){
+        return "invalid"
+    }
+    return value
+}
+
+console.log(checkFalsy(0))
 
 // 3. Use for loop to print all numbers between 1 and 10, skipping even numbers using continue (0.5 Grade)
 // • Output Example:1, 3, 5, 7, 9
@@ -125,17 +129,38 @@ function sum(num1, num2, num3, num4, num5){
 console.log(sum(1, 2, 3, 4, 5))
 
 
+
+// 12. Write a function that returns a promise which resolves after 3 seconds with a 'Success' message. (0.5 Grade)
+// • Output Example: “Success”
+
+function success(){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve("success")
+        },3000)
+    })
+}
+
+success().then((message)=>{
+    console.log(message)
+})
+
 // 13. Write a function to find the largest number in an array. (0.5 Grade)
 // • Input Example: [1, 3, 7, 2, 4]
 // • Output Example: 7
+function largestNumber(arr){
+    let largest=arr[0] // 1
 
-function largestNum(...nums){
-    for(let i=0; i<nums.length;i++){
-
+    for(let i = 1; i<arr.length;i++){// 3 7 2 4
+        if(arr[i]>largest){ //3> 1
+            largest =arr[i] // 3
+        }
     }
+
+    return largest
 }
 
-console.log(largestNum([1, 3, 7, 2, 4]))
+console.log(largestNumber([1, 3, 7, 2, 4]))
 
 
 // 14. Write a function that takes an object and returns an array containing only its keys. (0.5 Grade)
@@ -185,8 +210,8 @@ var x= 10;
  *  Accessing the variable during this time causes a ReferenceError
  */
 
-console.log(a); // ReferenceError
-let a = 5;
+// console.log(a); // ReferenceError
+// let a = 5;
 
 
 // 3. What are the main differences between == and ===? (0.5 Grade)
